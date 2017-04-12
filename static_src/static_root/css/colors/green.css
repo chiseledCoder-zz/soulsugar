@@ -1,0 +1,616 @@
+a:hover,
+a:focus {
+    color: #578223;
+}
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
+	color: #578223;
+}
+.noo-header.header-6 .noo-main-menu .navbar-nav li > .sub-menu li a:hover {
+	color: #578223;
+}
+.text-primary {
+    color: #578223;
+}
+.bg-primary {
+    color: #fff;
+    background-color: #578223;
+}
+.btn-primary {
+    background-color: #578223;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    background-color: #578223;
+}
+.btn-primary .badge {
+    color: #578223;
+}
+.btn-link:hover,
+.btn-link:focus {
+    color: #578223;
+}
+.pagination .page-numbers.current {
+    background: #578223;
+    border-color: #578223;
+}
+.pagination a.page-numbers:hover {
+    background: #578223;
+    border-color: #578223;
+}
+.noo-slider .slider-indicators a.selected,
+.noo-slider .slider-indicators a:hover {
+    background-color: #578223;
+}
+.noo-slider .slider-control {
+    background: #578223;
+}
+.hentry.sticky {
+    border-color: #578223;
+}
+.hentry.sticky:after {
+    background: #578223;
+}
+#comments ol li .comment-wrap .comment-block span.pull-left:hover,
+#comments ul li .comment-wrap .comment-block span.pull-left:hover {
+    background: #578223;
+}
+#comments #respond .form-submit input {
+    background-color: #578223;
+}
+#comments #respond .form-submit input:hover {
+    background: #578223;
+}
+#comments #respond .form-submit input.disabled,
+#comments #respond .form-submit input[disabled],
+fieldset[disabled] #comments #respond .form-submit input,
+#comments #respond .form-submit input.disabled:hover,
+#comments #respond .form-submit input[disabled]:hover,
+fieldset[disabled] #comments #respond .form-submit input:hover,
+#comments #respond .form-submit input.disabled:focus,
+#comments #respond .form-submit input[disabled]:focus,
+fieldset[disabled] #comments #respond .form-submit input:focus,
+#comments #respond .form-submit input.disabled.focus,
+#comments #respond .form-submit input[disabled].focus,
+fieldset[disabled] #comments #respond .form-submit input.focus,
+#comments #respond .form-submit input.disabled:active,
+#comments #respond .form-submit input[disabled]:active,
+fieldset[disabled] #comments #respond .form-submit input:active,
+#comments #respond .form-submit input.disabled.active,
+#comments #respond .form-submit input[disabled].active,
+fieldset[disabled] #comments #respond .form-submit input.active {
+    background-color: #578223;
+}
+#comments #respond .form-submit input .badge {
+    color: #578223;
+}
+.cube1,
+.cube2 {
+    background-color: #578223;
+}
+.widget ul li a:hover {
+    color: #578223;
+}
+.widget ul li.current-cat {
+    color: #578223;
+}
+.widget ul li.current-cat a {
+    color: #578223;
+}
+.widget_calendar table td#today,
+.widget_calendar table th#today {
+    background-color: #578223;
+}
+.commerce ul.product_list_widget li .amount {
+    color: #578223;
+}
+.widget_product_tag_cloud .tagcloud a:hover {
+    background: #578223;
+    border-color: #578223;
+}
+.noo-main-menu .navbar-nav li > .sub-menu li a:hover {
+    color: #578223;
+}
+.noo-menu-option ul li a:hover,
+.noo-menu-option ul li a:focus {
+    color: #578223;
+}
+.noo-header.header-3 .noo-menu-option ul li a:hover {
+    color: #578223;
+}
+.noo-header.header-4 .noo-main-menu .navbar-nav li > a:hover,
+.noo-header.header-4 .noo-main-menu .navbar-nav li > a:focus {
+    color: #578223;
+}
+.noo-header.header-4 .noo-main-menu .navbar-nav li > .sub-menu li a:hover {
+    color: #578223;
+}
+.noo-header.header-5 .noo-header-anchor ul li div a:hover {
+    color: #578223;
+}
+.noo-header.header-5 .noo-header-anchor ul li div a:hover span {
+    color: #578223;
+}
+.noo-header.header-6 .noo-main-menu .navbar-nav li > a:hover,
+.noo-header.header-6 .noo-main-menu .navbar-nav li > a:focus {
+    color: #578223;
+}
+.noo-header .menu-position .navbar-nav > li.noo_megamenu > .sub-menu > li .noo_megamenu_widget_area li a:hover {
+    color: #578223;
+}
+body.fixed_top .noo-header.header-6.eff .noo-main-menu .navbar-nav li > a:hover,
+body.fixed_top .noo-header.header-4.eff .noo-main-menu .navbar-nav li > a:hover {
+    color: #578223;
+}
+body.fixed_top .noo-header.header-6.eff .noo-main-menu .navbar-nav li > .sub-menu li a:hover,
+body.fixed_top .noo-header.header-4.eff .noo-main-menu .navbar-nav li > .sub-menu li a:hover {
+    color: #578223;
+}
+.search-header5 form input[type='submit'] {
+    background: #578223;
+}
+.noo-menu-item-cart .cart-item span {
+    color: #578223;
+}
+.noo-menu-item-cart .noo-minicart .minicart-body .cart-product .cart-product-details .cart-product-title a:hover {
+    color: #578223;
+}
+.noo-menu-item-cart .noo-minicart .minicart-body .cart-product .cart-product-details .cart-product-quantity {
+    color: #578223;
+}
+.noo-instagram .noo-instagram-info {
+    background: #578223;
+}
+.noo-services-columns li .line-top {
+    background-color: #578223;
+}
+.noo-services-columns li .line-top span:first-child:before,
+.noo-services-columns li .line-top span:last-child:before,
+.noo-services-columns li .line-left span:first-child:before,
+.noo-services-columns li .line-left span:last-child:before {
+    border: 10px solid #578223;
+}
+.noo-services-columns li .line-left {
+    background-color: #578223;
+}
+.filter-menu li span.selected,
+.filter-menu li span:hover {
+    color: #578223;
+}
+.noo-menu-content li .product-menu-ds .product-menu-flex .price {
+    color: #578223;
+}
+.noo-menu-content li .product-menu-ds .product-menu-flex .p-menu-title a:hover {
+    color: #578223;
+}
+.inheader-sh-title h4 {
+    color: #578223;
+}
+.custom_countdown_wrap h4 {
+    color: #578223;
+}
+.custom_countdown_wrap .price {
+    color: #578223;
+}
+.custom_countdown_wrap .countdown-section {
+    border: 2px solid #578223;
+}
+.noo-countdown-product .price {
+    color: #578223;
+}
+.noo-countdown-product .noo-product-action .noo-action .add_to_cart_button {
+    background: #578223;
+}
+.noo-countdown-product .noo-product-action .noo-action .yith-wcwl-add-to-wishlist a,
+.noo-countdown-product .noo-product-action .noo-action .yith-wcwl-wishlistexistsbrowse a {
+    background: #578223;
+}
+.noo-countdown-product.style_white .noo-product-action .noo-action .add_to_cart_button:hover,
+.noo-countdown-product.style_white .noo-product-action .noo-action .yith-wcwl-add-to-wishlist a:hover,
+.noo-countdown-product.style_white .noo-product-action .noo-action .yith-wcwl-wishlistexistsbrowse a:hover {
+    background-color: #578223;
+}
+.noo-button-creative a {
+    background: #578223;
+}
+.noo-button-creative a span.first {
+    background: #578223;
+}
+.noo-button-creative a span.first:before {
+    border-top: 17.5px solid #578223;
+}
+.noo-button-creative a span.first:before {
+    border-bottom: 17.5px solid #578223;
+}
+.noo-button-creative a span.second:before {
+    border-left: 27px solid #578223;
+}
+.noo-button-creative a span.second:after {
+    border-right: 27px solid #578223;
+}
+.noo-button-creative a .three {
+    background: #578223;
+}
+.noo-button-creative a .three:before {
+    border-top: 17.5px solid #578223;
+}
+.noo-button-creative a .three:after {
+    border-bottom: 17.5px solid #578223;
+}
+.noo-button-creative a .four:before {
+    border-bottom: 8px solid #578223;
+}
+.noo-button-creative a .four:after {
+    border-top: 8px solid #578223;
+}
+.noo-line .line-one {
+    border-color: #578223;
+}
+.noo-line .line-one span:first-child:before {
+    border: 1px solid #578223;
+}
+.noo-line .line-one span:last-child:before {
+    border: 1px solid #578223;
+}
+.noo-line .line-two {
+    border-color: #578223;
+}
+.noo-line .line-two span:first-child:before {
+    border: 1px solid #578223;
+}
+.noo-line .line-two span:last-child:before {
+    border: 1px solid #578223;
+}
+.noo-simple-product-slider li .noo-simple-slider-item .n-simple-content .price {
+    color: #578223;
+}
+.noo-simple-slider-content .noo-product-action .noo-action .add_to_cart_button:hover {
+    background-color: #578223;
+}
+.noo-simple-slider-content .noo-product-action .noo-action .yith-wcwl-add-to-wishlist a:hover,
+.noo-simple-slider-content .noo-product-action .noo-action .yith-wcwl-wishlistexistsbrowse a:hover {
+    background: #578223;
+}
+.noo-our_story .text-center a {
+    background-color: #578223;
+}
+.noo-blog-list li .cat {
+    color: #578223;
+}
+.noo-blog-list li .cat a {
+    color: #578223;
+}
+.blog-item:hover .blog-description h3 a {
+    color: #578223;
+}
+.blog-item .blog-quote cite {
+    color: #578223;
+}
+.blog-item .blog-description .cat a:hover {
+    color: #578223;
+}
+.blog-item .blog-description .meta a:hover {
+    color: #578223;
+}
+.blog-item .blog-description .view-more {
+    background-color: #578223;
+}
+.content-meta .content-tags span {
+    color: #578223;
+}
+.content-meta .content-tags a:hover {
+    color: #578223;
+}
+.content-meta .single-social .text-share {
+    color: #578223;
+}
+.content-meta .single-social .content-share a:hover {
+    color: #578223;
+}
+.single #author-bio .author-social a:hover {
+    color: #578223;
+}
+.single .post-navigation-line .prev-post:hover i,
+.single .post-navigation-line .prev-post:hover a {
+    color: #578223;
+}
+.single .post-navigation-line .next-post:hover i,
+.single .post-navigation-line .next-post:hover a {
+    color: #578223;
+}
+.noo_testimonial_wrap .noo-testimonial-sync2 .testimonial-name .noo_testimonial_name {
+    color: #578223;
+}
+.noo_testimonial_wrap .noo-testimonial-sync2.testimonial-three .owl-controls .owl-buttons div:hover {
+    color: #578223;
+}
+.noo_testimonial_wrap.noo_farmer_wrap .noo-testimonial-sync2 .testimonial-content .social a:hover {
+    color: #578223;
+}
+.product-list-item .right-img a span:hover em {
+    background-color: #578223;
+}
+.view_all {
+    background-color: #578223;
+}
+.noo-farmer:hover .noo-farmer-content {
+    background: #578223;
+}
+.noo-farmer .noo-farmer-thumbnail span.first:before {
+    background: #578223;
+}
+.noo-farmer .noo-farmer-thumbnail span.second:before {
+    background: #578223;
+}
+.noo-farmer .noo-farmer-thumbnail span.second:after {
+    background: #578223;
+}
+.noo-farmer .noo-farmer-content .social a:hover {
+    color: #578223;
+}
+.noo-atributes-item .eff .eff1 {
+    border: 1px solid #578223;
+}
+.noo-atributes-item .eff .eff2 {
+    border: 1px solid #578223;
+}
+.noo-header-filter li a.selected span,
+.noo-header-filter li > span.selected span,
+.noo-header-filter li a:hover span,
+.noo-header-filter li > span:hover span {
+    color: #578223;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls .owl-page:hover span {
+    background-color: #578223;
+}
+div.product-style2 .product-grid .noo-product-inner .noo-product-title .price {
+    color: #578223;
+}
+div.product-style2 .product-grid .noo-product-inner .noo-product-title .noo-product-action .noo-action .noo-qucik-view,
+div.product-style2 .product-grid .noo-product-inner .noo-product-title .noo-product-action .noo-action .add_to_cart_button,
+div.product-style2 .product-grid .noo-product-inner .noo-product-title .noo-product-action .noo-action .yith-wcwl-add-to-wishlist,
+div.product-style2 .product-grid .noo-product-inner .noo-product-title .noo-product-action .noo-action .link-detail {
+    background-color: #578223;
+}
+.product-masonry .noo-product-table-cell span a:hover {
+    background: #578223;
+    border-color: #578223;
+}
+.commerce-wishlist table.wishlist_table th {
+    background: #578223;
+}
+.commerce-wishlist table.wishlist_table .actions .continue:hover {
+    background: #578223;
+}
+.quick-view-wrap .quick-content .quick-right .price {
+    color: #578223;
+}
+.quick-view-wrap .quick-content .quick-right form.cart .button {
+    background: #578223;
+}
+.google-map .noo-address-info-wrap .address-info {
+    background-color: #578223;
+}
+.noo-sh-mailchimp .newsletter-form-fields input[type="submit"] {
+    background-color: #578223;
+}
+.wrap-footer a:hover {
+    color: #578223;
+}
+.mailchimp-widget .mc-subscribe-form button {
+    background-color: #578223;
+}
+.mailchimp-widget .mc-subscribe-form button.disabled,
+.mailchimp-widget .mc-subscribe-form button[disabled],
+fieldset[disabled] .mailchimp-widget .mc-subscribe-form button,
+.mailchimp-widget .mc-subscribe-form button.disabled:hover,
+.mailchimp-widget .mc-subscribe-form button[disabled]:hover,
+fieldset[disabled] .mailchimp-widget .mc-subscribe-form button:hover,
+.mailchimp-widget .mc-subscribe-form button.disabled:focus,
+.mailchimp-widget .mc-subscribe-form button[disabled]:focus,
+fieldset[disabled] .mailchimp-widget .mc-subscribe-form button:focus,
+.mailchimp-widget .mc-subscribe-form button.disabled.focus,
+.mailchimp-widget .mc-subscribe-form button[disabled].focus,
+fieldset[disabled] .mailchimp-widget .mc-subscribe-form button.focus,
+.mailchimp-widget .mc-subscribe-form button.disabled:active,
+.mailchimp-widget .mc-subscribe-form button[disabled]:active,
+fieldset[disabled] .mailchimp-widget .mc-subscribe-form button:active,
+.mailchimp-widget .mc-subscribe-form button.disabled.active,
+.mailchimp-widget .mc-subscribe-form button[disabled].active,
+fieldset[disabled] .mailchimp-widget .mc-subscribe-form button.active {
+    background-color: #578223;
+}
+.mailchimp-widget .mc-subscribe-form button .badge {
+    color: #578223;
+}
+.widget_noo_social .noo_social a:hover {
+    background: #578223;
+}
+.footer-2 .widget_noo_social .noo_social a:hover {
+    border-color: #578223;
+}
+.footer-3 a:hover {
+    color: #578223;
+}
+.footer-3 .widget ul li a:hover {
+    color: #578223;
+}
+.footer-3 .noo-bottom-bar-content i {
+    color: #578223;
+}
+.footer-4 .widget_noo_social .noo_social a:hover {
+    color: #578223;
+}
+.footer-4 .noo-bottom-bar-content i {
+    color: #578223;
+}
+.widget_tag_cloud .tagcloud a:hover {
+    border-color: #578223;
+    background: #578223;
+}
+.footer-2 .widget.widget_text .copyright i {
+    color: #578223;
+}
+.widget_noo_happyhours .widget-title {
+    color: #578223;
+}
+.noo-footer-shop-now .noo-show-now:hover em {
+    background-color: #578223;
+}
+@media (max-width: 991px) {
+	.off-canvas #off-canvas-nav .noo-main-canvas .nav-collapse li a:hover {
+        color: #578223;
+    }
+    .off-canvas #off-canvas-nav .noo-main-canvas .nav-collapse li a:hover:after {
+        color: #578223;
+    }
+}
+.commerce .widget_price_filter .ui-slider .ui-slider-handle,
+.commerce .widget_price_filter .ui-slider .ui-slider-range {
+    background: #578223;
+}
+.commerce .widget_price_filter .price_slider_amount .button:hover {
+    background: #578223;
+}
+.commerce .product-grid .noo-product-inner:hover {
+    border-color: #578223;
+}
+.commerce .product-grid .noo-product-title .noo-product-action {
+    background: #578223;
+}
+.commerce .product-list .noo-product-title .noo-product-action .add_to_cart_button {
+    background: #578223;
+}
+.commerce .product-list .noo-product-title .price {
+    color: #578223;
+}
+.commerce #respond input#submit,
+.commerce a.button,
+.commerce a.button.alt,
+.commerce button.button,
+.commerce input.button {
+    background: #578223;
+}
+.commerce .noo-catalog .commerce-result-count em {
+    color: #578223;
+}
+.product-style-control span:hover,
+.product-style-control span.active {
+    background: #578223;
+}
+.single-product div.product .images .project-slider .sync2 .item:hover {
+    border: 1px solid #578223;
+}
+.single-product div.product .entry-summary .noo_link_boxes > li > a:hover {
+    background-color: #578223;
+}
+.single-product div.product .entry-summary .price {
+    color: #578223;
+}
+.single-product div.product .entry-summary form.cart .button {
+    background: #578223;
+}
+.single-product div.product .entry-summary .yith-wcwl-add-to-wishlist a {
+    background: #578223;
+}
+.single-product div.product .noo-social-share a:hover {
+    color: #578223;
+}
+.single-product div.product .commerce-tabs ul.tabs li:hover {
+    background-color: #578223;
+}
+.single-product div.product .commerce-tabs .tab-pane #review_form_wrapper .form-submit input {
+    background: #578223;
+}
+.commerce-cart table.cart th {
+    background: #578223;
+}
+.commerce-cart table.cart .actions .continue:hover {
+    background: #578223;
+}
+.commerce-page .cart-collaterals .cart_totals table .order-total .amount {
+    color: #578223;
+}
+.commerce-page .cart-collaterals .cart_totals .wc-proceed-to-checkout a.checkout-button {
+    background: #578223;
+}
+.commerce-account input.button {
+    background: #578223;
+}
+.commerce-account #customer_login h2:before {
+    color: #578223;
+}
+.commerce nav.commerce-pagination ul li a.current,
+.commerce nav.commerce-pagination ul li span.current,
+.commerce nav.commerce-pagination ul li a:hover,
+.commerce nav.commerce-pagination ul li span:hover {
+    background-color: #578223;
+    border-color: #578223;
+}
+.noo-countdown-product .noo-product-action .noo-action .add_to_cart_button:hover {
+    background: #478200;
+}
+.noo-countdown-product .noo-product-action .noo-action .yith-wcwl-add-to-wishlist a:hover,
+.noo-countdown-product .noo-product-action .noo-action .yith-wcwl-wishlistexistsbrowse a:hover {
+    background: #478200;
+}
+.noo-our_story .text-center a:hover {
+    background-color: #478200;
+}
+.view_all:hover {
+    background-color: #478200;
+}
+.noo-sh-mailchimp .newsletter-form-fields input[type="submit"]:hover {
+    background-color: #478200;
+}
+.commerce .product-grid .noo-product-inner:hover .noo-product-title .noo-product-action {
+    background: #478200;
+}
+.commerce .product-list .noo-product-title .noo-product-action .add_to_cart_button:hover {
+    background: #478200;
+}
+.commerce #respond input#submit:hover,
+.commerce a.button:hover,
+.commerce a.button.alt:hover,
+.commerce button.button:hover,
+.commerce input.button:hover {
+    background: #478200;
+}
+.single-product div.product .entry-summary form.cart .button:hover {
+    background: #478200;
+}
+.single-product div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
+    background: #478200;
+}
+.single-product div.product .commerce-tabs .tab-pane #review_form_wrapper .form-submit input:hover {
+    background: #478200;
+}
+.rev-btn.btn-1:hover {
+	background-color: #578223 !important;
+	border-color: #578223 !important;
+}
+.rev-btn.btn-2 {
+	background-color: #578223;
+	border-color: #578223;
+}
+.btn-primary:hover {
+    background-color: #478200;
+    border-color: #478200;
+}
