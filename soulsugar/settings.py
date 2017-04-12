@@ -163,34 +163,34 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_src", "static_root")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_src", "static_root")
 
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "static_src", "media_root")
+# MEDIA_ROOT = os.path.join(BASE_DIR, "static_src", "media_root")
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static_src", "our_static"),
     )
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-# AWS_STORAGE_BUCKET_NAME = 'soulsugar-website'
+AWS_STORAGE_BUCKET_NAME = 'soulsugar-website'
 
-# S3_URL = 'https://%s.s3.amazonaws.com' %AWS_STORAGE_BUCKET_NAME
+S3_URL = 'https://%s.s3.amazonaws.com' %AWS_STORAGE_BUCKET_NAME
 
-# STATIC_DIRECTORY = '/static/'
+STATIC_DIRECTORY = '/static/'
 
-# MEDIA_DIRECTORY = '/media/'
+MEDIA_DIRECTORY = '/media/'
 
-# STATIC_URL = S3_URL + STATIC_DIRECTORY
+STATIC_URL = S3_URL + STATIC_DIRECTORY
 
-# MEDIA_URL = S3_URL + MEDIA_DIRECTORY
+MEDIA_URL = S3_URL + MEDIA_DIRECTORY
 
-# ADMIN_MEDIA_PREFIX = S3_URL + STATIC_DIRECTORY + 'admin/'
+ADMIN_MEDIA_PREFIX = S3_URL + STATIC_DIRECTORY + 'admin/'
 
-# AWS_QUERYSTRING_AUTH = False
+AWS_QUERYSTRING_AUTH = False
