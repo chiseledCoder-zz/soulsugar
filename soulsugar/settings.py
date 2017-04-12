@@ -179,7 +179,13 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-AWS_STORAGE_BUCKET_NAME = 'soulsugar-website'
+AWS_S3_HOST = 's3.ap-south-1.amazonaws.com'
+
+AWS_ACCESS_KEY_ID = 'AKIAIPATALATL7ZJJJIA'
+
+AWS_SECRET_ACCESS_KEY = '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'
+
+AWS_STORAGE_BUCKET_NAME = 'soulsugar'
 
 S3_URL = 'https://%s.s3.amazonaws.com' %AWS_STORAGE_BUCKET_NAME
 
