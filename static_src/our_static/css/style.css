@@ -4281,6 +4281,7 @@ ul.post_list_widget li a .post-date {
 @media (max-width: 991px) {
     .navbar-brand .noo-logo-img {
         max-height: 40px;
+        width: auto;
     }
 }
 
@@ -4290,6 +4291,7 @@ ul.post_list_widget li a .post-date {
     }
     .navbar-brand .noo-logo-img {
         max-height: 30px;
+        width:auto;
     }
 }
 
@@ -4533,8 +4535,11 @@ ul.post_list_widget li a .post-date {
     }
 }
 
-.noo-header.header-5 .navbar-wrapper {
+/*.noo-header.header-5 .navbar-wrapper {
     padding-top: 55px;
+}*/
+.noo-header.header-5 .navbar-wrapper {
+    padding-top: 0px;
 }
 
 @media (max-width: 991px) {
@@ -4645,7 +4650,7 @@ ul.post_list_widget li a .post-date {
 .noo-header.header-5 .noo-main-menu {
     display: box;
     width: 100%;
-    margin-top: 96px;
+    margin-top: 150px;
     float: none !important;
 }
 
