@@ -23,6 +23,7 @@ from django.contrib.staticfiles import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('frontend.urls')),
+    url(r'^', include('blog.urls')),
 ]
 
 if settings.DEBUG:

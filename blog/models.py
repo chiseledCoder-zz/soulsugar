@@ -11,10 +11,20 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class PostManager(models.Manager):
-	def active(self, *args, **kwargs):
-		return super(PostManager, self).filter(draft=False).filter(publish__lte=timezone.now())
+class PostQuerySet(models.query.QuerySet):
+	def not_draft(self):
+		return self.filter(draft=False)
+	
+	def published(self):
+		return self.filter(publish=True).not_draft()
 
+class PostManager(models.Manager):
+	def get_queryset(self, *args, **kwargs):
+		return PostQuerySet(self.model, using=self._db)
+			
+	def active(self, *args, **kwargs):
+		# Post.objects.all() = super(PostManager, self).all()
+		return self.get_queryset().published()
 
 class Post(models.Model):
 	user = models.ForeignKey(User, blank=True, null=True)

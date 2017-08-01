@@ -41,21 +41,18 @@ def post_detail(request, slug=None):
 
 	context = {
 		"title" : instance.title,
-		"instance": instance
+		"instance": instance,
 		"share_string": share_string
 	}
 	template = "blog/post_detail.html"
 	return render(request, template, context)
 
-def post_list(request):
+def blog_list(request):
 	today = timezone.now().date()
 	queryset_list = Post.objects.active()
 	query = request.GET.get('q')
 	if query:
-		queryset_list = queryset_list.filter(
-			Q(title__icontains==query)|
-			Q(content__icontains==query)|
-			).distinct()
+		queryset_list = queryset_list.filter(Q(title__icontains==query)|Q(content__icontains==query)).distinct()
 	paginator = Paginator(queryset_list, 8)
 	page_request_var = "page"
 	page = request.GET.get(page_request_var)
@@ -68,9 +65,9 @@ def post_list(request):
 
 	context = {
 		"object_list": queryset,
-		"title": "List"
+		"site_name": "Blog List",
 		"page_request_var": page_request_var,
 		"today": today
 	}
-	template = "blog/post_list.html"
+	template = "blog/blog_list.html"
 	return render(request, template, context)
