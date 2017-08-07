@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+	<div class="main">
+				<div class="pt-10 pb-10">
+					<div class="container">
+						<div class="row">
+							<div class="noo_image_left col-sm-6">
+								<div class="noo-image-signature">
+									<div class="img-background-color"></div>
+									<div class="img-background-sign style-2"></div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<form class="form">
+									<h3>Get in touch</h3>
+									<p>
+										Aliquam vitae mi a eros tincidunt ultricies. Donec porta gravida arcu. Morbi facilisis lorem felis, eu inerdum quam scelerisque eu.
+									</p>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-control-wrap your-name">
+												<input type="text" name="your-name" value="" size="40" class="form-control" placeholder="Name"/>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-control-wrap your-website">
+												<input type="text" name="your-website" value="" size="40" class="form-control" placeholder="Website"/>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-control-wrap your-email">
+												<input type="email" name="your-email" value="" size="40" class="form-control" placeholder="Email"/>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-control-wrap your-phone">
+												<input type="text" name="your-phone" value="" size="40" class="form-control" placeholder="Phone"/>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-control-wrap your-message">
+												<textarea name="your-message" cols="40" rows="10" class="form-control" placeholder="Message"></textarea>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<input type="submit" value="Submit" class="form-control submit btn-primary"/>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="google-map">
+					<div id="googleMap" data-icon="images/icon_location.png" data-lat="37.789133" data-lon="-122.402158"></div>
+					<div class="noo-address-info-wrap">
+						<div class="container">
+							<div class="address-info">
+								<h3>Contact info</h3>
+								<p>
+									Maecenas tristique gravida, odio et sagi ttis justo. Suspendisse ultri cies nisi vel quam suscipit, et rutrum odio porttitor. Claritas etiam proce ssusa dynamicus, tudium lectorum.
+								</p>
+								<ul>
+									<li>
+										<i class="fa fa-map-marker"></i>
+										<span>69 South Park Avenue San Francisco, CA 14782 USA</span>
+									</li>
+									<li>
+										<i class="fa fa-envelope"></i>
+										<span><a href="mailto:email@domain.com">email@domain.com</a></span>
+									</li>
+									<li>
+										<i class="fa fa-phone"> </i>
+										<span>(00) 123 456 789</span></li>
+									<li>
+										<i class="fa fa-globe"> </i>
+										<span><a href="#">http://www.companyname.com</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% enblock %}

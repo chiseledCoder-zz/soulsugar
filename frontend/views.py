@@ -7,3 +7,9 @@ def index(request):
 		"site_name":"Soul Sugar"
 	}
 	return render(request, template, context)
+
+def contact(request):
+	template = "contact.html"
+	context = {
+		"site_name" : "Contact Us"
+	}

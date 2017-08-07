@@ -10,6 +10,14 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+BOX_VARIATION = (
+	("1 Box","1 Box"),
+	("2 Box","2 Box"),
+	("3 Box","3 Box"),
+	("4 Box","4 Box"),
+	("5 Box","5 Box"),
+	("6 Box","6 Box"),
+	)
 
 class PostQuerySet(models.query.QuerySet):
 	def not_draft(self):
@@ -30,7 +38,8 @@ class Post(models.Model):
 	user = models.ForeignKey(User, blank=True, null=True)
 	title = models.CharField(max_length=120)
 	slug = models.SlugField(unique=True)
-	image = models.ImageField(upload_to='post/images/')
+	image = models.ImageField(upload_to='post/images/', blank=True, null=True)
+	# category = models.CharField(max_length=200, choices=BLOG_CATEGORY, default=New Product)
 	content = models.TextField()
 	draft = models.BooleanField(default=False)
 	publish = models.BooleanField(default=False)
