@@ -88,25 +88,25 @@ try:
     if 'DATABASES' not in locals():
         DATABASES = {}
 
-    if 'mysql://beda614deed3d9:f443135e@us-cdbr-iron-east-03.cleardb.net/heroku_b3845f14eac7bed' in os.environ:
-        url = urlparse.urlparse(os.environ['mysql://beda614deed3d9:f443135e@us-cdbr-iron-east-03.cleardb.net/heroku_b3845f14eac7bed'])
+    if 'mysql://bb603e1a8c073f:06d45cbc@us-cdbr-iron-east-05.cleardb.net/heroku_16d6f79a11d7969' in os.environ:
+        url = urlparse.urlparse(os.environ['mysql://bb603e1a8c073f:06d45cbc@us-cdbr-iron-east-05.cleardb.net/heroku_16d6f79a11d7969'])
 
         # Ensure default database exists.
         DATABASES['default'] = DATABASES.get('default', {})
 
         # Update with environment configuration.
         DATABASES['default'].update({
-            'NAME': 'heroku_b3845f14eac7bed',
-            'USER': 'beda614deed3d9',
-            'PASSWORD': 'f443135e',
-            'HOST': 'us-cdbr-iron-east-03.cleardb.net',
+            'NAME': 'heroku_16d6f79a11d7969',
+            'USER': 'bb603e1a8c073f',
+            'PASSWORD': '06d45cbc',
+            'HOST': 'us-cdbr-iron-east-05.cleardb.net',
             'PORT': '3306',
         })
         if self.connection.open:
             self.connection.stat()
 
         try:
-            self.connection = MySQLdb.connect(host='us-cdbr-iron-east-03.cleardb.net',port='3306',db='heroku_b3845f14eac7bed',user='beda614deed3d9',passwd='f443135e')
+            self.connection = MySQLdb.connect(host='us-cdbr-iron-east-05.cleardb.net',port='3306',db='heroku_16d6f79a11d7969',user='bb603e1a8c073f',passwd='06d45cbc')
         except MySQLdb.OperationalError, e:
             self.connection = None
 
