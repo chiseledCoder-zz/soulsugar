@@ -7,17 +7,31 @@ from django.db.models.signals import pre_save
 from django.utils import timezone
 from django.utils.text import slugify
 from django.contrib.auth.models import User
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
-BOX_VARIATION = (
-	("1 Box","1 Box"),
-	("2 Box","2 Box"),
-	("3 Box","3 Box"),
-	("4 Box","4 Box"),
-	("5 Box","5 Box"),
-	("6 Box","6 Box"),
+BLOG_CATEGORY = (
+		("New Arrivals","New Arrivals"),
+		("Healthy Treats","Healthy Treats"),
+		("Cake","Cake"),
+		("Recipe","Recipe"),
+		("General","General"),
+		("Diet","Diet"),
 	)
+
+
+class BlogCategory(models.Model):
+	title = models.CharField(max_length=150)
+	description = RichTextField()
+
+	def __unicode__(self):
+		return self.title
+
+	def __str__(self):
+		return self.title
+
+	def get_absolute_url(self):
+		return reverse("post:details", kwargs={"title": self.title})
 
 class PostQuerySet(models.query.QuerySet):
 	def not_draft(self):
@@ -37,12 +51,14 @@ class PostManager(models.Manager):
 class Post(models.Model):
 	user = models.ForeignKey(User, blank=True, null=True)
 	title = models.CharField(max_length=120)
-	slug = models.SlugField(unique=True)
 	image = models.ImageField(upload_to='post/images/', blank=True, null=True)
-	# category = models.CharField(max_length=200, choices=BLOG_CATEGORY, default=New Product)
-	content = models.TextField()
-	draft = models.BooleanField(default=False)
+	category = models.ForeignKey('BlogCategory', blank=True, null=True)
+	content = RichTextField()
+	draft = models.BooleanField(default=True)
 	publish = models.BooleanField(default=False)
+	publish_date = models.DateField(default=timezone.now)
+	slug = models.SlugField(unique=True)
+	tags = models.ManyToManyField('Tag')
 	updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
@@ -60,22 +76,19 @@ class Post(models.Model):
 	class Meta:
 		ordering = ["-timestamp", "-updated"]
 
-
-def create_slug(instance, new_slug=None):
-	slug = slugify(instance.title)
-	if new_slug is not None:
-		slug = new_slug
-	qs = Post.objects.filter(slug=slug).order_by("-id")
-	exists = qs.exists()
-	if exists:
-		new_slug = "%s-%s" %(slug, qs.first().id)
-		return create_slug(instance, new_slug=new_slug)
-	return slug
+	def save(self, *args, **kwargs):
+		self.slug = "-".join((slugify(self.title), str(self.id)))
+		return super(Post, self).save(*args, **kwargs)
 
 
-def pre_save_post_receiver(sender, instance, *args, **kwargs):
-	if not instance.slug:
-		instance.slug = create_slug(instance)
+class Tag(models.Model):
+	title = models.CharField(max_length=150)
 
+	def __unicode__(self):
+		return self.title
 
-pre_save.connect(pre_save_post_receiver, sender=Post)
+	def __str__(self):
+		return self.title
+
+	def get_absolute_url(self):
+		return reverse("post:details", kwargs={"title": self.title})
