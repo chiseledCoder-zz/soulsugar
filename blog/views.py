@@ -19,23 +19,24 @@ from .models import Post, Tag, BlogCategory
 
 # Create your views here.
 
-def post_detail(request, slug):
-	instance = get_object_or_404(Post, slug=slug)
+def post_detail(request, post_slug):
+	instance = get_object_or_404(Post, slug=post_slug)
 	if instance.draft == True:
 		raise Http404
 	share_string = quote_plus(instance.content)
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
+	share_string = quote_plus(instance.content)
 	context = {
-		"title" : instance.title,
-		"instance": instance,
+		"site_name": "Blog - " + str(instance.title),
+		"object": instance,
 		"share_string": share_string,
 		"tags": tags,
 		"blog_categorys": blog_categorys,
 		"recent_post_list": recent_blogs_list	
 	}
-	template = "blog/post_detail.html"
+	template = "blog/blog_detail.html"
 	return render(request, template, context)
 
 def blog_list(request):
@@ -44,7 +45,7 @@ def blog_list(request):
 	query = request.GET.get('q')
 	if query:
 		queryset_list = queryset_list.filter(Q(title__icontains==query)|Q(content__icontains==query)).distinct()
-	paginator = Paginator(queryset_list, 2)
+	paginator = Paginator(queryset_list, 10)
 	page = request.GET.get("page")
 	try:
 		queryset = paginator.page(page)
@@ -67,14 +68,14 @@ def blog_list(request):
 	return render(request, template, context)
 
 
-def tag_search(request, tag_name):
-	blogs = get_list_or_404(Post, tags__slug__iexact=tag_name)
+def tag_search(request, tag_slug):
+	blogs = get_list_or_404(Post, tags__slug__iexact=tag_slug)
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
 	template = "blog/blog_list.html"
 	context = {
-		"site_name": "Blog Search by "+ str(tag_name),
+		"site_name": "Blog Search by "+ str(tag_slug),
 		"tags": tags,
 		"blog_categorys": blog_categorys,
 		"object_list": blogs,
@@ -82,14 +83,14 @@ def tag_search(request, tag_name):
 	}
 	return render(request, template, context)
 
-def category_search(request, category_name):
-	blogs = get_list_or_404(Post, category__slug__iexact=category_name)
+def category_search(request, category_slug):
+	blogs = get_list_or_404(Post, category__slug__iexact=category_slug)
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
 	template = "blog/blog_list.html"
 	context = {
-		"site_name": "Blog Search by "+ str(category_name),
+		"site_name": "Blog Search by "+ str(category_slug),
 		"tags": tags,
 		"blog_categorys": blog_categorys,
 		"object_list": blogs,

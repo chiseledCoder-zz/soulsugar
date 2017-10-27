@@ -12,7 +12,7 @@
 			<ul>
 				{% for blog_category_name in blog_categorys %}
 					<li>
-						<a href="{% url 'category_search' blog_category_name.slug %}">{{ blog_category_name }}</a>
+						<a href="{{ blog_category.get_absolute_url }}">{{ blog_category_name }}</a>
 					</li>
 				{% endfor %}
 			</ul>
@@ -34,7 +34,7 @@
 			<h3 class="widget-title">Search by tags</h3>
 				<div class="tagcloud">
 					{% for tag in tags %}
-						<a href="{% url 'tag_search' tag.slug %}">{{ tag }}</a>
+						<a href="{{ tag.get_absolute_url }}">{{ tag }}</a>
 					{% endfor %}
 				</div>
 		</div>

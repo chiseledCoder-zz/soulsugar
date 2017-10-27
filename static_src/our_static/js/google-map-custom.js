@@ -5,7 +5,7 @@ if (jQuery("#googleMap").length > 0) {
     function initialize() {
         var mapProp = {
             center: myCenter,
-            zoom: 16,
+            zoom: 19,
             scrollwheel: false,
             mapTypeControlOptions: {
                 mapTypeIds: [ google.maps.MapTypeId.ROADMAP, "map_style" ]

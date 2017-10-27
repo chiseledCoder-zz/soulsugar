@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="main">
+				<div class="single noo-shop-main">
+					<div class="container">
+						<div class="row">
+							<div class="noo-main col-md-9">
+								<article>
+									<div class="blog-item">
+										<div class="blog-description">
+											<span class="cat">
+												<a href="{{ object.category.get_absolute_url }}">{{ object.category }}</a> 
+											</span>
+											<h1>{{ object.title|title }}</h1>
+											<span class="meta">
+												{{ object.publish_date }} By <a href="#">{{ object.user }}</a> 
+											</span>
+										</div>
+										{% if object.image %}
+											<div class="content-featured">
+												<div class="blog-thumbnail">
+													<div class="content-thumb">
+														<img width="740" height="440" src="{{ object.image.url }}" alt="" />
+													</div>
+												</div>
+											</div>
+										{% else %}
+
+										{% endif %}
+										<div class="blog_excerpt">
+											<p>{{ object.content|safe|linebreaks  }}</p>
+										</div>
+									</div>
+								</article>
+								<div class="content-meta">
+									<div class="content-tags">
+										<span class="fa fa-tag"></span>
+										{% for tag in object.tags.all %}
+											<a href="{{ tag.get_absolute_url }}">{{ tag }}</a>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							{% include 'blog/blog_right_sidebar.html' %}
+						</div>
+					</div>
+				</div>
+				<div class="noo-footer-shop-now">
+					<div class="container">
+						<div class="col-md-7">
+							<h4>- Every day fresh -</h4>
+							<h3>organic food</h3>
+						</div>
+						<img src="images/organici-love-me.png" class="noo-image-footer" alt="" />
+					</div>
+				</div>
+			</div>
+{% endblock %}

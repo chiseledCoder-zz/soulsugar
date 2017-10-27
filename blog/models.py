@@ -35,7 +35,7 @@ class BlogCategory(models.Model):
 		return super(BlogCategory, self).save(*args, **kwargs)
 
 	def get_absolute_url(self):
-		return reverse("post:details", kwargs={"title": self.title})
+		return reverse("category_search", kwargs={"category_slug": self.slug})
 
 class PostQuerySet(models.query.QuerySet):
 	def not_draft(self):
@@ -75,7 +75,7 @@ class Post(models.Model):
 		return self.title
 
 	def get_absolute_url(self):
-		return reverse("post:details", kwargs={"slug": self.slug})
+		return reverse("post_detail", kwargs={"post_slug": self.slug})
 
 	class Meta:
 		ordering = ["-publish_date"]
@@ -99,4 +99,4 @@ class Tag(models.Model):
 		return super(Tag, self).save(*args, **kwargs)
 			
 	def get_absolute_url(self):
-		return reverse("post:details", kwargs={"title": self.title})
+		return reverse("tag_search", kwargs={"tag_slug": self.slug})

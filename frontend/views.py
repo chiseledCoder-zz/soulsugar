@@ -13,3 +13,4 @@ def contact(request):
 	context = {
 		"site_name" : "Contact Us"
 	}
+	return render(request, template, context)

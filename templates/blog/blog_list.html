@@ -13,7 +13,7 @@
 											{% if item.image %}
 											<div class="blog-thumbnail">
 												<a class="content-thumb" href="blog-detail.html">
-													<img width="740" height="440" src="images/blog/blog_740x440.jpg" alt="" />
+													<img width="740" height="440" src="{{ item.image.url }}" alt=""/>
 												</a>
 											</div>
 											{% else %}
@@ -21,7 +21,7 @@
 										</div>
 										<div class="blog-description">
 											<span class="cat">
-												<a href="#">{{ item.category }}</a> 
+												<a href="{{ item.category.get_absolute_url }}">{{ item.category }}</a> 
 											</span>
 											<h3><a href="blog-detail.html">{{ item.title|title }}</a></h3>
 											<span class="meta">
@@ -31,13 +31,13 @@
 												<p>
 													{{ item.content|truncatewords_html:50|striptags  }}
 												</p>
-												<a href="blog-detail.html" class="view-more"><span>View more</span></a>
+												<a href="{{ item.get_absolute_url }}" class="view-more"><span>View more</span></a>
 											</div>
 											<div class="content-meta">
 												<div class="content-tags">
 													<span class="fa fa-tag"></span>
 													{% for tag in item.tags.all %}	
-														<a href="{% url 'tag_search' tag %}" style="text-transform: none;">{{ tag }}</a>,
+														<a href="{{ tag.get_absolute_url }}" style="text-transform: none;">{{ tag }}</a>,
 													{% endfor %}
 												</div>
 												<div class="single-social">
@@ -48,14 +48,8 @@
 															<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" class="noo-share" title="Share on Facebook">
 																<i class="fa fa-facebook"></i>
 															</a>
-															<a href="https://twitter.com/home?status=I'm%20going%20to%20learn%20to%20Code...%20Come%20build%20an%20web%20apsp%20with%20me!%20%23CFE%20and%20@justinmitchel%20{{ request.build_absolute_uri }}" class="noo-share" title="Share on Twitter">
+															<a href="https://twitter.com/home?status=Soul%20Sugar%20Bakery%20&%20Patiserie%20Blog%Share{{ request.build_absolute_uri }}" class="noo-share" title="Share on Twitter">
 																<i class="fa fa-twitter"></i>
-															</a>
-															<a href="#share" class="noo-share" title="Share on Google+">
-																<i class="fa fa-google-plus"></i>
-															</a>
-															<a href="#share" class="noo-share" title="Share on Pinterest">
-																<i class="fa fa-pinterest"></i>
 															</a>
 														</div>
 													</div> 
