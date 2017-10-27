@@ -36,20 +36,19 @@
 											<div class="content-meta">
 												<div class="content-tags">
 													<span class="fa fa-tag"></span>
-													{% for tag in tags %}	
-														<a href="#" style="text-transform: none;">{{ tag }}</a>,
+													{% for tag in item.tags.all %}	
+														<a href="{% url 'tag_search' tag %}" style="text-transform: none;">{{ tag }}</a>,
 													{% endfor %}
 												</div>
 												<div class="single-social">
 													<span class="text-share">
-														<span class="fa fa-share-alt"></span>Share this post
-													</span>
+														<span class="fa fa-share-alt"></span>Share this post	</span>
 													<div class="content-share">
 														<div class="noo-social social-share">
-															<a href="#share" class="noo-share" title="Share on Facebook">
+															<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" class="noo-share" title="Share on Facebook">
 																<i class="fa fa-facebook"></i>
 															</a>
-															<a href="#share" class="noo-share" title="Share on Twitter">
+															<a href="https://twitter.com/home?status=I'm%20going%20to%20learn%20to%20Code...%20Come%20build%20an%20web%20apsp%20with%20me!%20%23CFE%20and%20@justinmitchel%20{{ request.build_absolute_uri }}" class="noo-share" title="Share on Twitter">
 																<i class="fa fa-twitter"></i>
 															</a>
 															<a href="#share" class="noo-share" title="Share on Google+">
@@ -69,10 +68,16 @@
 								
 								
 								<div class="pagination list-center">
-									<span class="page-numbers current">1</span>
-									<a class="page-numbers" href="#">2</a>
-									<a class="page-numbers" href="#">3</a>
-									<a class="next page-numbers" href="#"><i class="fa fa-long-arrow-right"></i></a>
+									{% if object_list.has_previous %}
+							            <a class="previous page-numbers" href="?page={{ object_list.previous_page_number }}"><i class="fa fa-long-arrow-left"></i></a>
+							        {% endif %}
+
+							        <span class="page-numbers current">
+							            {{ object_list.number }} 
+							        </span>
+							        {% if object_list.has_next %}
+							            <a class="next page-numbers" href="?page={{ object_list.next_page_number }}"><i class="fa fa-long-arrow-right"></i></a>
+							        {% endif %}
 								</div>
 							</div>
 							{% include 'blog/blog_right_sidebar.html' %}

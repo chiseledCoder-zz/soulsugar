@@ -23,12 +23,16 @@ BLOG_CATEGORY = (
 class BlogCategory(models.Model):
 	title = models.CharField(max_length=150)
 	description = RichTextField()
-
+	slug = models.SlugField(unique=True, default="")
 	def __unicode__(self):
 		return self.title
 
 	def __str__(self):
 		return self.title
+
+	def save(self, *args, **kwargs):
+		self.slug = slugify(self.title)
+		return super(BlogCategory, self).save(*args, **kwargs)
 
 	def get_absolute_url(self):
 		return reverse("post:details", kwargs={"title": self.title})
@@ -74,7 +78,7 @@ class Post(models.Model):
 		return reverse("post:details", kwargs={"slug": self.slug})
 
 	class Meta:
-		ordering = ["-timestamp", "-updated"]
+		ordering = ["-publish_date"]
 
 	def save(self, *args, **kwargs):
 		self.slug = "-".join((slugify(self.title), str(self.id)))
@@ -83,12 +87,16 @@ class Post(models.Model):
 
 class Tag(models.Model):
 	title = models.CharField(max_length=150)
-
+	slug = models.SlugField(unique=True, default="")
 	def __unicode__(self):
 		return self.title
 
 	def __str__(self):
 		return self.title
 
+	def save(self, *args, **kwargs):
+		self.slug = slugify(self.title)
+		return super(Tag, self).save(*args, **kwargs)
+			
 	def get_absolute_url(self):
 		return reverse("post:details", kwargs={"title": self.title})

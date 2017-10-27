@@ -1,57 +1,42 @@
 <div class="noo-sidebar col-md-3">
-								<div class="noo-sidebar-wrap">
-									<div class="widget widget_search">
-										<h3 class="widget-title">Search</h3>
-										<form>
-											<input type="search" class="search-field" placeholder="Search&hellip;" value="" name="s"/>
-											<input type="submit" value="Search"/>
-										</form>
-									</div>
-									<div class="widget widget_categories">
-										<h3 class="widget-title">Categories</h3> 
-										<ul>
-											<li><a href="#">Diet</a></li>
-											<li><a href="#">General</a></li>
-											<li><a href="#">Organic Food</a></li>
-											<li><a href="#">Organic Gardening</a></li>
-											<li><a href="#">Recipes</a></li>
-											<li><a href="#">Super Food</a></li>
-											<li><a href="#">Tips &amp; Guides</a></li>
-										</ul>
-									</div>
-									<div class="widget widget_recent_entries">
-										<h3 class="widget-title">Popular posts</h3>
-										<ul class="post_list_widget">
-											<li>
-												<a href="blog-detail.html">
-													<span class="post-thumb" data-bg="images/blog/blog_150x150.jpg"></span>
-													<span class="post-title">Tips for Ripening your Fruit</span>
-													<span class="post-date">December 4, 2015</span>
-												</a>
-											</li>
-											<li>
-												<a href="blog-detail.html">
-													<span class="post-thumb" data-bg="images/blog/blog_150x150.jpg"></span>
-													<span class="post-title">Feeding kids organic food</span>
-													<span class="post-date">December 4, 2015</span>
-												</a>
-											</li>
-											<li>
-												<a href="blog-detail.html">
-													<span class="post-thumb" data-bg="images/blog/blog_150x150.jpg"></span>
-													<span class="post-title">Health Benefits of a Raw Food</span>
-													<span class="post-date">December 4, 2015</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-									<div class="widget widget_tag_cloud">
-										<h3 class="widget-title">Search by tags</h3>
-										<div class="tagcloud">
-											{% for tag in tags %}
-											<a href="#">{{ tag }}</a>
-											{% endfor %}
-										</div>
-									</div>
-								</div>
-							</div>
+	<div class="noo-sidebar-wrap">
+		<div class="widget widget_search">
+			<h3 class="widget-title">Search</h3>
+				<form>
+					<input type="search" class="search-field" placeholder="Search&hellip;" value="" name="s"/>
+					<input type="submit" value="Search"/>
+				</form>
+		</div>
+		<div class="widget widget_categories">
+			<h3 class="widget-title">Categories</h3> 
+			<ul>
+				{% for blog_category_name in blog_categorys %}
+					<li>
+						<a href="{% url 'category_search' blog_category_name.slug %}">{{ blog_category_name }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="widget widget_recent_entries">
+			<h3 class="widget-title">Popular posts</h3>
+			<ul class="post_list_widget">											
+				{% for recent_post in recent_post_list %}
+					<li>
+						<a href="#">
+							<span class="post-title">{{ recent_post|title }}</span>
+							<span class="post-date">{{ recent_post.publish_date }}</span>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="widget widget_tag_cloud">
+			<h3 class="widget-title">Search by tags</h3>
+				<div class="tagcloud">
+					{% for tag in tags %}
+						<a href="{% url 'tag_search' tag.slug %}">{{ tag }}</a>
+					{% endfor %}
+				</div>
+		</div>
+	</div>
+</div>
