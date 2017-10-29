@@ -40,6 +40,20 @@
 											<a href="{{ tag.get_absolute_url }}">{{ tag }}</a>
 										{% endfor %}
 									</div>
+									<div class="single-social">
+													<span class="text-share">
+														<span class="fa fa-share-alt"></span>Share this post	</span>
+													<div class="content-share">
+														<div class="noo-social social-share">
+															<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" class="noo-share" title="Share on Facebook">
+																<i class="fa fa-facebook"></i>
+															</a>
+															<a href="https://twitter.com/home?status=Check%20out%20Soul%20Sugar%20Bakery%20and%20Patisserie%20Blog%20%{{ request.build_absolute_uri }}" class="noo-share" title="Share on Twitter">
+																<i class="fa fa-twitter"></i>
+															</a>
+														</div>
+													</div> 
+												</div> 
 								</div>
 							</div>
 							{% include 'blog/blog_right_sidebar.html' %}

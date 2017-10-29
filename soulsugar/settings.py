@@ -184,9 +184,10 @@ STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 AWS_S3_HOST = 's3.ap-south-1.amazonaws.com'
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID','')
-
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY','')
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID','')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY','')
+AWS_ACCESS_KEY_ID = 'AKIAJHDN6SORJ2OCIAYA'
+AWS_SECRET_ACCESS_KEY = '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'
 
 AWS_STORAGE_BUCKET_NAME = 'sss3bucket'
 

@@ -14,44 +14,18 @@
 											<span></span>
 										</div>
 									</div>
-									<a href="./" class="navbar-brand">
+									<a href="{% url 'index_page' %}" class="navbar-brand">
 										<img class="noo-logo-img noo-logo-normal" src="{% static 'images/ss_logo.png' %}" alt="" height="40" width="150">
 									</a>
 								</div>  
 								<nav class="pull-right noo-main-menu">
 									<ul class="nav-collapse navbar-nav">
-										<li class="menu-item-has-children current-menu-item">
-											<a href="./">Cakes</a>
-											<ul class="sub-menu">
-												<li><a href="index-2.html">Homepage 2</a></li>
-												<li><a href="index-3.html">Homepage 3</a></li>
-												<li><a href="index-4.html">Homepage 4</a></li>
-												<li><a href="index-5.html">Homepage 5</a></li>
-												<li><a href="index-6.html">Homepage 6</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="#">Cup Cakes</a>
-											<ul class="sub-menu">
-												<li><a href="header-1.html">Header 1</a></li>
-												<li><a href="header-2.html">Header 2</a></li>
-												<li><a href="header-3.html">Header 3</a></li>
-												<li><a href="header-4.html">Header 4</a></li>
-												<li><a href="header-5.html">Header 5</a></li>
-												<li><a href="header-6.html">Header 6</a></li>
-											</ul>
-										</li>
-										<li><a href="our-story.html">Healthy Treats</a></li>
-										<li class="menu-item-has-children">
-											<a href="boxes.html">Corporates</a>
-											<ul class="sub-menu">
-												<li><a href="box-detail.html">Box Detail</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="blog.html">Occasions</a>
-										</li>
-										<li><a href="{% url 'contact' %}">Contact</a></li>
+										<li><a href="{% url 'cakes_page' %}">Cakes</a></li>
+										<li><a href="{% url 'cupcakes_page' %}">Cup Cakes</a></li>
+										<li><a href="{% url 'healthy_treats_page' %}">Healthy Treats</a></li>
+										<li><a href="{% url 'corporates_page' %}">Corporates</a></li>
+										<li><a href="{% url 'occasions_page' %}">Occasions</a></li>
+										<li><a href="{% url 'contact_page' %}">Contact</a></li>
 										<li><a href="{% url 'blog_list' %}">Blog</a></li>
 									</ul>
 								</nav>

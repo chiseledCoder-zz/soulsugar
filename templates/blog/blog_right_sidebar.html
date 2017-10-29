@@ -2,8 +2,8 @@
 	<div class="noo-sidebar-wrap">
 		<div class="widget widget_search">
 			<h3 class="widget-title">Search</h3>
-				<form>
-					<input type="search" class="search-field" placeholder="Search&hellip;" value="" name="s"/>
+				<form method="GET" action="{% url 'post_search' %}">
+					<input type="search" class="search-field" placeholder="Search&hellip;" value="" name="q"/>
 					<input type="submit" value="Search"/>
 				</form>
 		</div>
@@ -12,7 +12,7 @@
 			<ul>
 				{% for blog_category_name in blog_categorys %}
 					<li>
-						<a href="{{ blog_category.get_absolute_url }}">{{ blog_category_name }}</a>
+						<a href="{{ blog_category_name.get_absolute_url }}">{{ blog_category_name }}</a>
 					</li>
 				{% endfor %}
 			</ul>
@@ -22,7 +22,7 @@
 			<ul class="post_list_widget">											
 				{% for recent_post in recent_post_list %}
 					<li>
-						<a href="#">
+						<a href="{{ recent_post.get_absolute_url }}">
 							<span class="post-title">{{ recent_post|title }}</span>
 							<span class="post-date">{{ recent_post.publish_date }}</span>
 						</a>

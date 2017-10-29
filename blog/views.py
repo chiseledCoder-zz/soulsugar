@@ -41,18 +41,15 @@ def post_detail(request, post_slug):
 
 def blog_list(request):
 	today = timezone.now().date()
-	queryset_list = Post.objects.active()
-	query = request.GET.get('q')
-	if query:
-		queryset_list = queryset_list.filter(Q(title__icontains==query)|Q(content__icontains==query)).distinct()
-	paginator = Paginator(queryset_list, 10)
+	queryset_list = Post.objects.active()	
+	paginator = Paginator(queryset_list, 2)
 	page = request.GET.get("page")
 	try:
 		queryset = paginator.page(page)
 	except PageNotAnInteger:
 		queryset = paginator.page(1)
 	except EmptyPage:
-		query = paginator.page(paginator.num_pages)
+		queryset = paginator.page(paginator.num_pages)
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
@@ -69,31 +66,77 @@ def blog_list(request):
 
 
 def tag_search(request, tag_slug):
-	blogs = get_list_or_404(Post, tags__slug__iexact=tag_slug)
+	queryset_list = get_list_or_404(Post, tags__slug__iexact=tag_slug)
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
+	paginator = Paginator(queryset_list, 2)
+	page = request.GET.get("page")
+	try:
+		queryset = paginator.page(page)
+	except PageNotAnInteger:
+		queryset = paginator.page(1)
+	except EmptyPage:
+		queryset = paginator.page(paginator.num_pages)
 	template = "blog/blog_list.html"
 	context = {
 		"site_name": "Blog Search by "+ str(tag_slug),
 		"tags": tags,
 		"blog_categorys": blog_categorys,
-		"object_list": blogs,
+		"object_list": queryset,
 		"recent_post_list": recent_blogs_list
 	}
 	return render(request, template, context)
 
 def category_search(request, category_slug):
-	blogs = get_list_or_404(Post, category__slug__iexact=category_slug)
+	queryset_list = get_list_or_404(Post, category__slug__iexact=category_slug)
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
+	paginator = Paginator(queryset_list, 2)
+	page = request.GET.get("page")
+	try:
+		queryset = paginator.page(page)
+	except PageNotAnInteger:
+		queryset = paginator.page(1)
+	except EmptyPage:
+		queryset = paginator.page(paginator.num_pages)
 	template = "blog/blog_list.html"
 	context = {
 		"site_name": "Blog Search by "+ str(category_slug),
 		"tags": tags,
 		"blog_categorys": blog_categorys,
-		"object_list": blogs,
+		"object_list": queryset,
+		"recent_post_list": recent_blogs_list
+	}
+	return render(request, template, context)
+
+
+def post_search(request):
+	try:
+		search_key = request.GET.get('q')
+	except:
+		search_key = None
+
+	if search_key:
+		queryset_list = Post.objects.filter(Q(title__icontains=search_key)|Q(content__icontains=search_key)).distinct()
+	tags = Tag.objects.all()
+	blog_categorys = BlogCategory.objects.all()
+	recent_blogs_list = Post.objects.all()[:5]
+	paginator = Paginator(queryset_list, 2)
+	page = request.GET.get("page")
+	try:
+		queryset = paginator.page(page)
+	except PageNotAnInteger:
+		queryset = paginator.page(1)
+	except EmptyPage:
+		queryset = paginator.page(paginator.num_pages)
+	template = "blog/blog_list.html"
+	context = {
+		"site_name": "Blog Search by "+ str(search_key),
+		"tags": tags,
+		"blog_categorys": blog_categorys,
+		"object_list": queryset,
 		"recent_post_list": recent_blogs_list
 	}
 	return render(request, template, context)

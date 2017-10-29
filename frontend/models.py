@@ -22,13 +22,28 @@ class ProductCategory(models.Model):
 class Product(models.Model):
 	name = models.CharField(max_length=200)
 	description = models.TextField(null=True, blank=True)
+	product_category = models.ForeignKey('ProductCategory', default="")
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	weight = models.CharField(max_length=50)
 	image = models.ImageField(upload_to="products/", default="products/default.jpg")
+	featured = models.BooleanField(default=False)
 	slug = models.SlugField(unique=True)
 	updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
+	def __unicode__(self):
+		return self.name
+
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		ordering = ["-timestamp"]
+
+	def save(self, *args, **kwargs):
+		self.slug = "-".join((slugify(self.product_category), (slugify(self.name)), str(self.id)))
+		return super(Product, self).save(*args, **kwargs)
+			
 
 def create_slug(instance, new_slug=None):
 	slug = slugify(instance.title)
