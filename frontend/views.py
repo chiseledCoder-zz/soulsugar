@@ -28,6 +28,13 @@ def cupcakes_page(request):
 	}
 	return render(request, template, context)
 
+def desserts_page(request):
+	template = "desserts.html",
+	context = {
+		"site_name": "Desserts"
+	}
+	return render(request, template, context)
+
 def healthy_treats_page(request):
 	template = "healthy_treats.html"
 	context = {
