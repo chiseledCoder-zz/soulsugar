@@ -36,7 +36,7 @@
 											</li>
 											{% for item in product_category %}
 											<li>
-												<a data-option-value="*" href="#{{ item }}">
+												<a data-option-value=".{{ item|slugify }}" href="#{{ item|slugify }}">
 													<span>{{ item|title }}</span>
 												</a>
 											</li>
@@ -45,7 +45,7 @@
 									</div>
 									<div class="noo-product-grid products row product-grid noo-grid-4">
 										{% for item in new_products %}
-											<div class="{{ item.product_category }} masonry-item noo-product-column col-md-4 col-sm-6 product">
+											<div class="{{ item.product_category|slugify }} masonry-item noo-product-column col-md-4 col-sm-6 product">
 											<div class="noo-product-inner">
 												<div class="noo-product-thumbnail">
 													<a href="shop-detail.html">

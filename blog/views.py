@@ -42,7 +42,7 @@ def post_detail(request, post_slug):
 def blog_list(request):
 	today = timezone.now().date()
 	queryset_list = Post.objects.active()	
-	paginator = Paginator(queryset_list, 2)
+	paginator = Paginator(queryset_list, 10)
 	page = request.GET.get("page")
 	try:
 		queryset = paginator.page(page)
@@ -70,7 +70,7 @@ def tag_search(request, tag_slug):
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
-	paginator = Paginator(queryset_list, 2)
+	paginator = Paginator(queryset_list, 10)
 	page = request.GET.get("page")
 	try:
 		queryset = paginator.page(page)
@@ -93,7 +93,7 @@ def category_search(request, category_slug):
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
-	paginator = Paginator(queryset_list, 2)
+	paginator = Paginator(queryset_list, 10)
 	page = request.GET.get("page")
 	try:
 		queryset = paginator.page(page)
@@ -123,7 +123,7 @@ def post_search(request):
 	tags = Tag.objects.all()
 	blog_categorys = BlogCategory.objects.all()
 	recent_blogs_list = Post.objects.all()[:5]
-	paginator = Paginator(queryset_list, 2)
+	paginator = Paginator(queryset_list, 10)
 	page = request.GET.get("page")
 	try:
 		queryset = paginator.page(page)
