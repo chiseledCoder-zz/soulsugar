@@ -46,22 +46,21 @@
 		<a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
 		{% include 'all_js.html' %}
 		{% block extrajs %}
-		<!-- d80709b1dd704022ab4c2cc30ba443e2 -->
-		{% verbatim  %}
-		<script type="text/javascript">
-    var userFeed = new Instafeed({
-    get: 'user',
-    userId: '2304115307',
-    clientId: 'd80709b1dd704022ab4c2cc30ba443e2',
-    accessToken: '406732423.d80709b.01db8e94166a49e19da5ba11f39520d1',
-    sortBy: 'most-recent',
-    limit: 4,
-    links: false,
-    template: '<div class="col-sm-4 col-xs-4"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" style="padding-bottom:10px"/></a></div>'
-  });
-  userFeed.run();
-</script>
-{% endverbatim  %}
+			{% verbatim  %}
+			<script type="text/javascript">
+			    var userFeed = new Instafeed({
+			    get: 'user',
+			    userId: '2304115307',
+			    clientId: 'd80709b1dd704022ab4c2cc30ba443e2',
+			    accessToken: '406732423.d80709b.01db8e94166a49e19da5ba11f39520d1',
+			    sortBy: 'most-recent',
+			    limit: 9,
+			    links: false,
+			    template: '<div class="col-sm-4 col-xs-4"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" style="padding-bottom:10px"/></a></div>'
+			  });
+			  userFeed.run();
+			</script>
+			{% endverbatim  %}
 		{% endblock %}
 	</body>
 </html>
