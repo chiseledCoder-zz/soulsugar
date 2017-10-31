@@ -14,6 +14,13 @@ def index_page(request):
 	}
 	return render(request, template, context)
 
+def about_us_page(request):
+	template = "about.html",
+	context = {
+		"site_name": "About Us"
+	}
+	return render(request, template, context)
+
 def cakes_page(request):
 	template = "cakes.html",
 	context = {
