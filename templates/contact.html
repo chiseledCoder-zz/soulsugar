@@ -7,40 +7,37 @@
 						<div class="row">
 							<div class="noo_image_left col-sm-6">
 								<div class="noo-image-signature">
-									<div class="img-background-color"></div>
-									<div class="img-background-sign style-2"></div>
+									<div class="img-background-sign style-2" style="background-image: url({% static 'images/contactus.png' %});"></div>
 								</div>
 							</div>
 							<div class="col-sm-6">
-								<form class="form">
-									<h3>Get in touch</h3>
-									<p>
-										Aliquam vitae mi a eros tincidunt ultricies. Donec porta gravida arcu. Morbi facilisis lorem felis, eu inerdum quam scelerisque eu.
+								<form class="form" method="POST" action="{% url 'contact_form' %}">{% csrf_token %}
+									{% if success %}
+										<p>
+                            				{{ success }}
 									</p>
+									{% else %}
+									<h3>
+										Get in touch...</h3>
+									<p>
+                            Please leave your details an we will get back to you shortly
+									</p>
+									{% endif %}
+									
 									<div class="row">
 										<div class="col-md-6 col-sm-12">
 											<div class="form-control-wrap your-name">
-												<input type="text" name="your-name" value="" size="40" class="form-control" placeholder="Name"/>
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-12">
-											<div class="form-control-wrap your-website">
-												<input type="text" name="your-website" value="" size="40" class="form-control" placeholder="Website"/>
+												<input type="text" name="contact_name" value="" size="40" class="form-control" placeholder="Name" required="required" />
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="form-control-wrap your-email">
-												<input type="email" name="your-email" value="" size="40" class="form-control" placeholder="Email"/>
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-12">
-											<div class="form-control-wrap your-phone">
-												<input type="text" name="your-phone" value="" size="40" class="form-control" placeholder="Phone"/>
+												<input type="email" name="contact_email" value="" size="40" class="form-control" placeholder="Email" required="required" />
 											</div>
 										</div>
 										<div class="col-md-12">
 											<div class="form-control-wrap your-message">
-												<textarea name="your-message" cols="40" rows="10" class="form-control" placeholder="Message"></textarea>
+												<textarea name="contact_message" cols="40" rows="10" class="form-control" placeholder="Message" required="required" ></textarea>
 											</div>
 										</div>
 										<div class="col-md-12">

@@ -1,5 +1,8 @@
+from django.conf import settings
 from django.shortcuts import render
 from .models import *
+from django.core.mail import send_mail
+
 # Create your views here.
 def index_page(request):
 	featured_products = Product.objects.filter(featured=True)[:5]
@@ -70,3 +73,16 @@ def contact_page(request):
 	}
 	return render(request, template, context)
 
+def contact_form(request):
+	if request.method == "POST":
+		contact_name = request.POST['contact_name']
+		contact_email = request.POST['contact_email']
+		contact_message = request.POST['contact_message']
+		email_message = str(contact_message) + "\n by " + str(contact_name)+ "\n " + str(contact_email)
+
+		send_mail("New inquiry from Soul Sugar Website", email_message, settings.EMAIL_HOST_USER, ['soulsugarbakery@gmail.com'], fail_silently=False)
+		print send_mail
+	context = {
+		"success" : "We have received your message. Will get back to you shortly!"
+	}
+	return render(request, 'contact.html')

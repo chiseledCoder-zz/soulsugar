@@ -12,5 +12,6 @@ urlpatterns = [
 	url(r'^healthy_treats/$', views.healthy_treats_page, name='healthy_treats_page'),
 	url(r'^corporates/$', views.corporates_page, name='corporates_page'),
 	url(r'^occasions/$', views.occasions_page, name='occasions_page'),
-	url(r'^contact/$', views.contact_page, name='contact_page')
+	url(r'^contact/$', views.contact_page, name='contact_page'),
+	url(r'^contact_form/$', views.contact_form, name='contact_form')
 	]
