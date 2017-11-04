@@ -11,11 +11,11 @@
 									<div class="blog-item">
 										<div class="content-featured">
 											{% if item.image %}
-											<div class="blog-thumbnail">
-												<a class="content-thumb" href="blog-detail.html">
-													<img width="740" height="440" src="{{ item.image.url }}" alt=""/>
-												</a>
-											</div>
+												<div class="blog-thumbnail">
+													<a class="content-thumb" href="{{ item.get_absolute_url }}">
+														<img width="740" height="440" src="{{ item.image.url }}" alt=""/>
+													</a>
+												</div>
 											{% else %}
 											{% endif %}
 										</div>
@@ -23,9 +23,9 @@
 											<span class="cat">
 												<a href="{{ item.category.get_absolute_url }}">{{ item.category }}</a> 
 											</span>
-											<h3><a href="blog-detail.html">{{ item.title|title }}</a></h3>
+											<h3><a href="{{ item.get_absolute_url }}">{{ item.title|title }}</a></h3>
 											<span class="meta">
-												{{ item.publish_date }} {% if item.user %}By <a href="#">{{ item.user }}</a> {% else %}{% endif %}
+												{{ item.publish_date }} {% if item.user %}By <a href="#">{{ item.user.get_full_name }}</a> {% else %}{% endif %}
 											</span>
 											<div class="blog_excerpt">
 												<p>

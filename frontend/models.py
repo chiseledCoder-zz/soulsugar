@@ -63,3 +63,20 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(pre_save_post_receiver, sender=Product)
+
+
+class Testimonial(models.Model):
+	user_name = models.CharField(max_length=150)
+	user_photo = models.ImageField(default="images/avatar/avatar_120x120.jpg")
+	content = models.TextField()
+	updated = models.DateTimeField(auto_now=True, auto_now_add=False)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.testimony_user
+
+	def __str__(self):
+		return self.testimony_user
+
+	class Meta:
+		ordering = ["-timestamp"]

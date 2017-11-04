@@ -21,7 +21,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="noo-product-grid-wrap commerce product-style2">
+								<div class="noo-product-grid-wrap commerce ">
 									<div class="noo-sh-title">
 										<img width="40" height="39" src="{% static 'images/icon_p.png' %}" alt=""/> 
 										<h2>NEW products</h2>
@@ -50,7 +50,7 @@
 												<div class="noo-product-thumbnail">
 													<a href="shop-detail.html">
 														<img width="600" height="760" src="{% if item.image %}{{ item.image.url }}{% else %}
-									{% static 'images/product/product_260x330.jpg' %}{% endif %}" alt="" />
+														{% static 'images/product/product_260x330.jpg' %}{% endif %}" alt="" />
 													</a>
 												</div>
 												<div class="noo-product-title"> 
@@ -59,15 +59,55 @@
 														<span class="amount">&#8377;&nbsp;{{ item.price }}</span><br/>for
 														<span class="amount">&nbsp;{{ item.weight }}</span>
 													</span>
-													<span class="price">
-														
-													</span>
+													<div class="noo-product-action">
+															<div class="noo-action">
+																<a href="{% url 'contact_page' %}" class="button product_type_simple add_to_cart_button">
+																	Connect with Baker
+																</a>
+															</div>
+														</div>
 												</div> 
 											</div>
 										</div>
 										{% endfor %}
 
 									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="noo_testimonial_wrap">
+									<ul class="noo_testimonial">
+										<li>
+											{% for testimony in testimonials %}
+											<div class="testimonial_wrap">
+												<div class="testimonial-header">
+														{% if testimony.user_photo %}
+															<img width="120" height="120" class="noo_testimonial_avatar" src="{{ testimony.user_photo.url }}" alt="" />
+														{% else %}
+														{% endif %}
+													<div class="testimonial-name">
+														<h4 class="noo_testimonial_name">- {{ testimony.user_name }} -</h4>
+													</div>
+												</div>
+												<div class="testimonial-content">
+													<div>
+														<i class="fa fa-quote-left"></i>
+															<p>
+																{{ testimony.content }}
+															</p>
+														<i class="fa fa-quote-right"></i>
+													</div>
+												</div>
+											</div>
+											{% endfor %}
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
