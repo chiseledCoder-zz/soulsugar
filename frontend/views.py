@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 
 # Create your views here.
 def index_page(request):
-	featured_products = Product.objects.filter(featured=True)[:5]
+	featured_products = Product.objects.filter(featured=True)[:7]
 	new_products = Product.objects.all()[:10]
 	product_category = ProductCategory.objects.all()
 	template = 'index.html'
