@@ -1,0 +1,36 @@
+<div class="testimonial-3" style="background-image: none; background-color: #CCCCCC">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="noo_testimonial_wrap">
+									<ul class="noo_testimonial">
+										<li>
+											{% for testimony in testimonials %}
+											<div class="testimonial_wrap">
+												<div class="testimonial-header">
+														{% if testimony.user_photo %}
+															<img width="120" height="120" class="noo_testimonial_avatar" src="{{ testimony.user_photo.url }}" alt="" />
+														{% else %}
+														{% endif %}
+													<div class="testimonial-name">
+														<h4 class="noo_testimonial_name">- {{ testimony.user_name }} -</h4>
+													</div>
+												</div>
+												<div class="testimonial-content">
+													<div>
+														<i class="fa fa-quote-left"></i>
+															<p>
+																{{ testimony.content }}
+															</p>
+														<i class="fa fa-quote-right"></i>
+													</div>
+												</div>
+											</div>
+											{% endfor %}
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
