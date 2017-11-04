@@ -73,10 +73,10 @@ class Testimonial(models.Model):
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
-		return self.testimony_user
+		return self.user_name
 
 	def __str__(self):
-		return self.testimony_user
+		return self.user_name
 
 	class Meta:
 		ordering = ["-timestamp"]

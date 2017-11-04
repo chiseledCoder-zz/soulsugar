@@ -8,12 +8,14 @@ def index_page(request):
 	featured_products = Product.objects.filter(featured=True)[:7]
 	new_products = Product.objects.all()[:10]
 	product_category = ProductCategory.objects.all()
+	testimonials = Testimonial.objects.all()[:5]
 	template = 'index.html'
 	context = {
 		"site_name":"Home Page",
 		"featured_products": featured_products,
 		"new_products": new_products,
-		"product_category": product_category
+		"product_category": product_category,
+		"testimonials": testimonials,
 	}
 	return render(request, template, context)
 
