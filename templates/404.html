@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+			<section class="noo-page-heading eff" style="background-image: url({% static 'images/Aboutus.jpg' %}); background-repeat:no-repeat;background-size:contain;background-position:center;">
+				<div class="container">
+					<div class="noo-heading-content">
+						<h1 class="page-title eff">404</h1>
+						<div class="noo-page-breadcrumb eff">
+						</div>
+					</div>
+					<a href="{% url 'index_page' %}" class="btn btn-lg btn-default">Return Home</a>
+				</div>
+			</section>
+{% endblock %}
