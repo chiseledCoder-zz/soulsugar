@@ -83,8 +83,9 @@ def contact_form(request):
 		email_message = str(contact_message) + "\n by " + str(contact_name)+ "\n " + str(contact_email)
 
 		send_mail("New inquiry from Soul Sugar Website", email_message, settings.EMAIL_HOST_USER, ['soulsugarbakery@gmail.com'], fail_silently=False)
-		print send_mail
+		
 	context = {
 		"success" : "We have received your message. Will get back to you shortly!"
+		"site_name": "Contact Submission"
 	}
-	return render(request, 'contact.html')
+	return render(request, 'contact.html', context)
