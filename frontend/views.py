@@ -82,7 +82,7 @@ def contact_form(request):
 		contact_message = request.POST['contact_message']
 		email_message = str(contact_message) + "\n by " + str(contact_name)+ "\n " + str(contact_email)
 
-		send_mail("New inquiry from Soul Sugar Website", email_message, settings.EMAIL_HOST_USER, ['soulsugarbakery@gmail.com'], fail_silently=False)
+		send_mail("New inquiry from Soul Sugar Website", email_message, settings.EMAIL_HOST_USER, ['nikhil.salome@gmail.com'], fail_silently=False)
 		print send_mail
 	context = {
 		"success" : "We have received your message. Will get back to you shortly!"
