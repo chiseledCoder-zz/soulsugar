@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -274,7 +274,7 @@ CKEDITOR_CONFIGS = {
 }
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
 EMAIL_HOST = "smtpout.asia.secureserver.net"
 EMAIL_HOST_USER = "contact@soulsugar.in"
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD','')
