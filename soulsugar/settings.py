@@ -275,7 +275,7 @@ CKEDITOR_CONFIGS = {
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.mail.yahoo.com"
-EMAIL_HOST_USER = "soulsugarbakery@gmail.com"
+EMAIL_HOST = "smtpout.asia.secureserver.net"
+EMAIL_HOST_USER = "contact@soulsugar.in"
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD','')
-EMAIL_PORT = 587
+EMAIL_PORT = 80
